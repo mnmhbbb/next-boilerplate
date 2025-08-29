@@ -5,6 +5,7 @@ import { FlatCompat } from "@eslint/eslintrc";
 import importPlugin from "eslint-plugin-import";
 import unusedImports from "eslint-plugin-unused-imports";
 import tseslint from "typescript-eslint";
+import pluginQuery from "@tanstack/eslint-plugin-query";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -118,6 +119,7 @@ const eslintConfig = [
       "@typescript-eslint/no-explicit-any": "warn",
     },
   },
+  ...pluginQuery.configs["flat/recommended"],
 ];
 
 export default eslintConfig;
